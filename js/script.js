@@ -1,3 +1,9 @@
+function getInputFieldValueById(inputFieldId) {
+  const inputField = document.getElementById(inputFieldId);
+  const inputFieldValue = parseInt(inputField.value);
+  return inputFieldValue;
+}
+
 const calculateExpense = () => {
   const income = getInputFieldValueById("income");
   const food = getInputFieldValueById("food");
@@ -8,7 +14,7 @@ const calculateExpense = () => {
   if (income < 0 || isNaN(income) == true || 
   food < 0 || isNaN(food) == true || 
   rent < 0 || isNaN(rent) == true || 
-  clothes < 0 || isNaN(clothes) == false) {
+  clothes < 0 || isNaN(clothes) == true) {
     alert("Inputs must be positive numbers");
   } else {
     // calculate expense
@@ -31,7 +37,8 @@ const calculateSavings = () => {
   const savePercentage = getInputFieldValueById("save");
 
   // Validate saving percentage value
-  if (income < 0 || isNaN(income) == true || savePercentage < 0 || isNaN(savePercentage) == true) {
+  if (income < 0 || isNaN(income) == true || 
+  savePercentage < 0 || isNaN(savePercentage) == true) {
     alert("Provide positive saving value");
   } else {
     // calculate saving amount
